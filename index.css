@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Chat Page Layout */
+#chat-page {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fc; /* Light background for a soft feel */
+}
+
+/* Sidebar Styles */
+#group-list {
+  list-style: none;
+  padding: 0;
+}
+
+#group-list li {
+  background-color: #558b55; 
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#group-list li:hover {
+  background-color: #799b7d; /* Darker Coral */
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #1c1c1c; /* Darker, sleek black background */
+  color: #ffffff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid #333; /* Subtle divider */
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffb84d; /* Bright gold for the header */
+}
+
+/* Logout Button Style */
+#logout-button {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #e74c3c; /* Bold Red */
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  margin-top: 20px;
+  align-self: flex-end;
+  transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+  background-color: #c0392b; /* Darker Red */
+}
+
+/* Main Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff; /* Clean white background */
+  padding: 15px;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f0f4f7; /* Light background for messages */
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  background-color: #d1e8e2; /* Soft teal for message background */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #39c8a5; /* Lively teal for sent messages */
+  color: #ffffff;
+}
+
+/* Input & Buttons */
+input[type="text"], button {
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#send-button {
+  background-color: #ff9f43; /* Vibrant orange */
+  color: #ffffff;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+  background-color: #e87e31; /* Slightly darker orange */
+}
+
+#emoji-button {
+  font-size: 24px;
+  color: #f39c12; /* Bright yellow-orange */
+  background: none;
+  border: none;
+}
+
+#emoji-button:hover {
+  color: #d35400; /* Slightly darker yellow-orange */
+}
+
+/* Image Upload */
+#image-input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  background-color: #8e44ad; /* Bold purple */
+  padding: 8px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+label:hover {
+  background-color: #732d91; /* Darker purple */
+}
+
+/* Emoji Picker */
+.emoji-picker {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.emoji-button:hover {
+  background-color: #f2f3f4; /* Light gray hover effect */
+}
+
+
+/* Image Upload */
+#image-input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  background-color: #ff9f43; /* Bright orange */
+  padding: 8px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+label:hover {
+  background-color: #e8882d; /* Slightly darker orange */
+}
+
+/* Emoji Picker */
+.emoji-picker {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.emoji-button:hover {
+  background-color: #dcdde1; /* Light gray hover effect */
+}
+#sign-in-page {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1); /* Gradient background */
+  background-size: 400% 400%; /* Smooth transition effect */
+  animation: gradientAnimation 10s ease infinite; /* Animation for gradient */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#sign-in-page .bg-white {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1); /* Gradient for the box */
+  color: #2c3e50; /* Dark text color for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 15px; /* Smooth rounded corners */
+  animation: gradientAnimation 8s ease infinite; /* Optional animation for the gradient */
+}
+/* Custom Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Vibrant Sign-In Button Hover Effect */
+#sign-in-button {
+  transition: background-color 0.3s ease;
+}
+#sign-in-button:hover {
+  background-color: #1e3a8a; /* Darker blue for hover */
+}
+
+/* Chat Window Hover Effects */
+#create-group-button:hover {
+  background-color: #f97316; /* Hover red-orange gradient */
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+  transition: border 0.3s ease;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none;
+}
+
+/* Chat Button Hover Effect */
+#send-button:hover {
+  background-color: #2d6a4f; /* Darker green on hover */
+}
+
+/* Emoji Button Hover */
+#emoji-button:hover {
+  background-color: #facc15; /* Bright yellow on hover */
+}
+
+/* Image Attach Button Hover Effect */
+label[for="image-input"]:hover {
+  background-color: #f97316; /* Red-orange gradient on hover */
+}
