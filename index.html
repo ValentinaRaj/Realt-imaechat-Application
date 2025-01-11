@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Sign-In Page -->
+  <div id="sign-in-page" class="h-screen flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-80">
+      <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">Sign In</h2>
+      <input id="username" type="text" placeholder="Enter your name" class="w-full p-2 mb-4 border border-gray-300 rounded-lg">
+      <input id="password" type="password" placeholder="Enter your password" class="w-full p-2 mb-4 border border-gray-300 rounded-lg">
+      <button id="sign-in-button" class="w-full p-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-500">Sign In</button>
+    </div>
+  </div>
+
+  <!-- Chat Page -->
+  <div id="chat-page" class="hidden h-screen flex flex-col bg-gray-100">
+    
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white p-4 flex justify-between items-center">
+      <div id="username-display" class="text-lg font-semibold">Welcome</div>
+      <button id="logout-button" class="bg-red-500 p-2 rounded-full text-white hover:bg-red-600 transition">Logout</button>
+    </div>
+
+    <!-- Main Chat and Sidebar -->
+    <div class="flex flex-1">
+
+      <!-- Sidebar (Friends & Groups) -->
+      <div class="w-1/4 bg-gradient-to-r from-green-600 via-green-700 to-green-800 p-4 shadow-lg">
+        <h3 class="text-lg font-semibold text-white mb-4">Groups</h3>
+        <ul id="group-list" class="text-white">
+          <!-- Group items will be dynamically added here -->
+        </ul>
+        <button id="create-group-button" class="mt-4 w-full bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 p-2 rounded-lg text-white hover:bg-gradient-to-l hover:from-red-500 hover:to-orange-500">Create Group</button>
+      </div>
+
+      <!-- Chat Window -->
+      <div class="flex-1 bg-gray-50 p-4 flex flex-col justify-between">
+        
+        <!-- Messages Area -->
+        <div id="messages" class="flex-1 overflow-y-auto p-2 mb-4">
+          <!-- Messages will appear here -->
+        </div>
+
+        <!-- Message Input and Buttons -->
+        <div class="flex items-center space-x-2">
+          <!-- Emoji Button -->
+          <button id="emoji-button" class="bg-yellow-500 p-2 rounded-full text-white">
+            😀
+          </button>
+
+          <!-- Message Input -->
+          <input id="message" type="text" placeholder="Type a message..." class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+          <!-- Send Button -->
+          <button id="send-button" class="bg-gradient-to-r from-green-500 to-green-700 p-2 rounded-full text-white hover:bg-gradient-to-l hover:from-green-700 hover:to-green-500">Send</button>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="mt-4">
+          <input type="file" id="image-input" class="hidden" />
+          <label for="image-input" class="cursor-pointer bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 p-2 text-white rounded-lg">Attach Image</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
